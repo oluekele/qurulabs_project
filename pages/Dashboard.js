@@ -26,7 +26,7 @@ const Dashboard = () => {
             <div className='flex flex-wrap items-center gap-6'>
               {build.map((item)=>(
                 <>
-                  <div className='border-[0.5px] rounded-[30px] w-[350px] p-4 relative'>
+                  <div key={item.id} className='border-[0.5px] rounded-[30px] w-[350px] p-4 relative'>
                     <img src={item.img}alt='background'  className='w-full h-[300px] rounded-[30px] '/>
                     <p className='bg-[green] text-white p-2 rounded-lg absolute top-[50%] left-10'>{item.price}</p>
                     
@@ -55,7 +55,7 @@ const Dashboard = () => {
             <div className='flex flex-wrap items-center gap-6'>
             {land.map((item)=>(
                 <>
-                  <div className='border-[0.5px] rounded-[30px] w-[350px] p-4 relative'>
+                  <div key={item.id} className='border-[0.5px] rounded-[30px] w-[350px] p-4 relative'>
                     <img src={item.img}alt='background'  className='w-full h-[300px] rounded-[30px] '/>
                     <p className='bg-[green] text-white p-2 rounded-lg absolute top-[50%] left-10'>{item.price}</p>
                     
@@ -83,7 +83,7 @@ const Dashboard = () => {
             <div className='flex flex-wrap items-center gap-6'>
             {property.map((item)=>(
                 <>
-                  <div className='border-[0.5px] rounded-[30px] w-[350px] p-4 relative'>
+                  <div key={item.id} className='border-[0.5px] rounded-[30px] w-[350px] p-4 relative'>
                     <img src={item.img}alt='background'  className='w-full h-[300px] rounded-[30px] '/>
                     <p className='bg-[green] text-white p-2 rounded-lg absolute top-[50%] left-10'>{item.price}</p>
                     

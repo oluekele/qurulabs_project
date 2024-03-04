@@ -35,3 +35,14 @@
 .slideshowDot.active {
   background-color: #858484;
 }
+
+#loading::after{
+  content: '';
+  height: 10px;
+  width: 200px;
+  background-color: #ffa200; 
+  position: absolute; 
+  left: 0;
+  border-radius: 16px;
+  
+}
