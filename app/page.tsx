@@ -26,7 +26,7 @@ export default function Home() {
       {/* <EmailVerified /> */}
 
       {/* <EmailFail /> */}
-      <KYCVerification />
+      {/* <KYCVerification /> */}
     </div>
   );
 }
