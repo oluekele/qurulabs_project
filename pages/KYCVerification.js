@@ -11,7 +11,7 @@ const KYCVerification = () => {
   return (
     <div className='relative'>
       <Header />
-      <div className=' flex items-center gap-4  top-5 left-[20%] absolute z-50'>
+      <div className=' flex items-center gap-4  top-[4%] left-[20%] fixed z-50'>
           
         <Link href='#' className='text-[#ffa200] bg-slate-200 p-2 rounded-full'><FaArrowLeftLong size={15}/></Link>
         <p>Return to previous</p>
@@ -48,7 +48,7 @@ const KYCVerification = () => {
             <h3>Upload a Passport Photograph</h3>
             <div className='border-[0.5px] border-dotted rounded-sm mt-6 py-[50px] flex items-center justify-center mb-10'>
               <div className='flex items-center gap-4'>
-                <FiUpload size={20}/>
+                <FiUpload size={20} className='cursor-pointer'/>
                 <p className='text-[10px]'>Drop your file here or <span className='text-[#ffa200] cursor-pointer'>browse</span></p>
               </div>
 
@@ -72,7 +72,7 @@ const KYCVerification = () => {
             <h3>Upload an ID</h3>
             <div className='border-[0.5px] border-dotted rounded-sm mt-6 py-[50px] flex items-center justify-center mb-10'>
             <div className='flex items-center gap-4'>
-              <FiUpload size={20}/>
+              <FiUpload size={20} className='cursor-pointer'/>
               <p className='text-[10px]'>Drop your file here or <span className='text-[#ffa200] cursor-pointer'>browse</span></p>
           </div>
 
