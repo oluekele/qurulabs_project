@@ -1,4 +1,4 @@
-const Properties =[
+const Properties = [
   {
     id: 1,
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUKokX19oE4R4HgSfvBUtM3qkQU2ZOepDLSCoO4JdsTRzlCErqKHAm-s44Tzp5GK_5Xnc&usqp=CAU',

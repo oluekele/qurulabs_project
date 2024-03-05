@@ -16,30 +16,30 @@ const LeftNavbar = () => {
   const currentPath = usePathname()
  
   return (
-    <div className='w-[200px] text-[12px] fixed top-[100px]'>
+    <div className='w-[200px] text-[12px] fixed top-[150px]'>
       <div className={
-          `${currentPath ? 'text-red-400':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2`
+          `${currentPath ? 'text-orange-400 bg-[#F2F3F3]':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2 py-3 pl-3 rounded-md`
         }>
         <MdDashboard size={20}/>
         <Link href='/' className='w-full'>Dashboard</Link>
         
       </div>
       <div className={
-          `${!currentPath ? 'text-red-400':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2`
+          `${!currentPath ? 'text-orange-400 bg-[#F2F3F3]':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2 py-3 pl-3 rounded-md`
         }>
         <FaListCheck size={20}/>
         <Link href='/' className='w-full'>List Property</Link>
         
       </div>
       <div className={
-          `${!currentPath ? 'text-red-400':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2`
+          `${!currentPath ? 'text-orange-400 bg-[#F2F3F3]':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2 py-3 pl-3 rounded-md`
         }>
         <LuTableProperties size={20}/>
         <Link href='/manageProperties' className='w-full'>Manage Properties</Link>
         
       </div>
       <div className={
-          `${!currentPath ? 'text-red-400':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2`
+          `${!currentPath ? 'text-orange-400 bg-[#F2F3F3]':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2 py-3 pl-3 rounded-md`
         }>
         <BsPeopleFill size={20}/>
         <div className='flex items-center justify-between w-full'>
@@ -49,7 +49,7 @@ const LeftNavbar = () => {
         
       </div>
       <div className={
-          `${!currentPath ? 'text-red-400':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2`
+          `${!currentPath ? 'text-orange-400 bg-[#F2F3F3]':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2 py-3 pl-3 rounded-md`
         }>
         <MdOutlinePayment size={20}/>
         <div className='flex items-center justify-between w-full'>
@@ -58,14 +58,14 @@ const LeftNavbar = () => {
         </div>
       </div>
       <div className={
-          `${!currentPath ? 'text-red-400':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2`
+          `${!currentPath ? 'text-orange-400 bg-[#F2F3F3]':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2 py-3 pl-3 rounded-md`
         }>
         <SiGoogletagmanager size={20}/>
         <Link href= '/payroll' className='w-full'>Payroll</Link>
         
       </div>
       <div className={
-          `${!currentPath ? 'text-red-400':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2`
+          `${!currentPath ? 'text-orange-400 bg-[#F2F3F3]':'text-zinc-900 hover:text-zinc-400 transition' } flex items-center gap-4 mt-2 py-3 pl-3 rounded-md`
         }>
         <BsPersonWorkspace size={20}/>
         <div className='flex items-center justify-between w-full'>
