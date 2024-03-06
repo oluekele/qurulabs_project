@@ -12,7 +12,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 
 
-const LeftNavbar = () => {
+const LeftNavbar = ({ title }) => {
   const currentPath = usePathname()
  
   return (

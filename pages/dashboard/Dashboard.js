@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../components/header'
-import LeftNavbar from '../components/leftNavbar'
-import Footer from '../components/Footer'
+import Header from '../../components/header'
+import LeftNavbar from '../../components/leftNavbar'
+import Footer from '../../components/Footer'
 import Image from "next/image";
-import BgImage from '../assets/bg_1.jpg.webp'
-import LandData from '../data/LandData'
-import Building from '../data/BuildingData'
-import Properties from '../data/Properties'
+import BgImage from '../../assets/bg_1.jpg.webp'
+import LandData from '../../data/LandData'
+import Building from '../../data/BuildingData'
+import Properties from '../../data/Properties'
 import { IoLocation } from "react-icons/io5";
 
 const Dashboard = () => {
@@ -18,7 +18,7 @@ const Dashboard = () => {
     <div className='mt-[100px] relative'>
       <Header />
       <div className='flex mt-10 gap-8 w-[95%] mx-auto'>
-        <LeftNavbar />
+        <LeftNavbar title="Dashboard" />
         <div className='w-full ml-[250px] mt-[3.5rem]'>
           <Image src={BgImage} alt='background' width={1200} height={200} className='w-full h-[400px] object-cover rounded-[30px]'/>
           <div className='w-full mt-10'>
