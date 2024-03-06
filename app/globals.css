@@ -35,3 +35,70 @@
 .slideshowDot.active {
   background-color: #858484;
 }
+
+#loading::after{
+  content: '';
+  height: 10px;
+  width: 200px;
+  background-color: #ffa200; 
+  position: absolute; 
+  left: 0;
+  border-radius: 16px;
+  
+}
+
+#payment{
+  animation-name: flow;
+  animation-direction: reverse;
+  animation-duration: 10s;
+  animation: ease-in;
+}
+#payment::before{
+  content: '';
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  top: 15px;
+  left: 15px;
+}
+
+
+.outter{
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background-color: #d8d3d3b0;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.25),
+              -6px -6px 10px -1px rgba(255, 255, 255, 0.637);
+  padding: 25px;
+  
+}
+
+.inner{
+  height: 90px;
+  width: 90px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+              inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+              -0.5px -0.5px 0px rgba(255,255,255,1),
+              0.5px 0.5px 0px rgba(0,0,0,0.15),
+              0px 12px 10px -10px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .percent{
+  font-weight: 600;
+
+}
+.circle1{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: amin 20s linear forwards;
+} */
