@@ -9,11 +9,11 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className='bg-black mt-10'>
+    <div className='bg-black '>
       <div className="flex flex-col items-center justify-center max-w-[850px] w-[80%] md:[70%] mx-auto pt-[20px] pb-[30px] md:pb-[30px] text-slate-50 gap-4 ">
         <div className="flex  items-center justify-center max-w-[850px] w-[80%] md:[70%] mx-auto pt-[30px] pb-[30px] md:pb-[50px]  gap-4 ">
           
-          <div className="flex items-center justify-center gap-4  py-2">
+          <div className="flex items-center justify-center gap-4">
             <Link href={"/"} className='transition hover:text-red-400 font-bold'>
               <FaXTwitter size={24}/>
             </Link>

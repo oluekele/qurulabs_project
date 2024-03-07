@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/header'
-import LeftNavbar from '../components/leftNavbar'
+import LeftNavbar from '../components/AdminLeftNavbar'
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Link from 'next/link'
 import { BsFileEarmarkCheckFill } from "react-icons/bs";
