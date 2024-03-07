@@ -1,6 +1,6 @@
 'use client'
 import Header from '@/components/header'
-import AdminLeftNavbar  from '@/components/AdminLeftNavbar '
+import AdminLeftNavbar  from '@/components/AdminLeftNavbar'
 import Footer from '@/components/Footer'
 import Image from "next/image";
 import BgImage from '@/assets/bg_1.jpg.webp'
