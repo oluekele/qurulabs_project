@@ -17,7 +17,7 @@ export default function Home() {
     <div>
       {/* <Account /> */}
       
-      {/* <AdminDashboard /> */}
+      <AdminDashboard />
 
       {/* <AdminProperty /> */}
       
@@ -27,7 +27,7 @@ export default function Home() {
 
       {/* <CheckBox /> */}
 
-      <AdminLeftNavbar />
+      {/* <AdminLeftNavbar /> */}
 
       {/* <EmailVerified /> */}
 
