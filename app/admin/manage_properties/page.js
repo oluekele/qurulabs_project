@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Header from '@/components/header'
 import AdminLeftNavbar from '@/components/AdminLeftNavbar';
 import Link from 'next/link'
@@ -12,11 +12,24 @@ import Building from '@/data/BuildingData'
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { AiFillEdit, AiOutlineClose } from "react-icons/ai";
 import AddAmenities from '@/components/AddAmenities';
+import ConfirmDelete from '@/components/ConfirmDelete';
+import PasswordToDelete from '@/components/ConfirmDelete'
+import { RiErrorWarningFill } from "react-icons/ri";
+
+
 
 const ManageProperties = () => {
-
+  const [products, setProducts] = useState(Building)
+  
   const [addAmenities, setAddAmenities] = useState(false)
 
+  const [dialog, setDialog] = useState({
+    message: '',
+    isLoading: false,
+    nameProduct: Building.type,
+  });
+
+ 
   const [allData, setAllData] = useState(Building)
   const fillterCat = (category) => {
     setAllData(
@@ -32,9 +45,45 @@ const ManageProperties = () => {
       })
     )
   }
+ 
+  const idProductRef = useRef();
+  
+  const handleDialog = (message, isLoading, nameProduct) =>{
+    setDialog({
+      message,
+      isLoading,
+      nameProduct,
+    });
+  }
+ 
+
+  const handleDelete = (id) =>{
+    handleDialog(`Are you sure you want to delete this!`, true, Building.type);
+    
+   
+    idProductRef.current = id;
+  }
+  
+  const areUSureDelete = (choose) =>{
+    if(choose){
+      setProducts(products.filter((p) => p.id !== idProductRef.current))
+      handleDialog("", false)
+      
+      document.body.style.overflow = 'unset';
+    }else{
+      handleDialog("", false)
+      
+      document.body.style.overflow = 'hidden';
+    }
+
+  }
+
+  
+  
+
   const build = Building
   return (
-    <div className='mt-[70px] relative'>
+    <div className='mt-[70px] relative overflow-hidden scroll-m-0'>
       <Header />
       <div className='flex mt-10 gap-8  w-[90%] '>
         <AdminLeftNavbar />
@@ -51,7 +100,7 @@ const ManageProperties = () => {
             <div className={addAmenities 
             ? 'fixed left-0 top-0 p-4 w-full h-screen bg-[#23232988] z-[999] duration-200' 
             : 'fixed top-[-100%] w-full h-screen bg-[#23232988] z-[999]  duration-200'}>
-              <AiOutlineClose size={18} onClick={()=> setAddAmenities(!addAmenities)} className='absolute left-[58%] top-[35%] cursor-pointer text-black'/>
+              <AiOutlineClose size={25} onClick={()=> setAddAmenities(!addAmenities)} className='absolute left-[58%] top-[35%] cursor-pointer text-black p-2 bg-[#f2f2f2] rounded-full'/>
               <AddAmenities className='relative'/>
             </div>
           </div>
@@ -78,86 +127,46 @@ const ManageProperties = () => {
             </div>
           </div>
 
-          <div className='flex overflow-hidden items-center gap-8'>
-              {build.map((item)=>(
-                <>
-                  <div key={item.id} className='border-[0.2px] rounded-[20px] text-[14px] border-gray-100 w-[330px] relative p-4'>
-                    <img src={item.img}alt='background'  className='w-full h-[300px] rounded-[16px] '/>
-                    <div className='flex items-center justify-between w-[80%] absolute top-[10%] left-10'>
+          <div className='flex flex-wrap overflow-hidden items-center gap-8 w-full'>
+          {products.map((p)=>(
+            <>
+              <div key={p.id} className='border-[0.2px] rounded-[20px] text-[14px] border-gray-100 w-[310px] relative p-4 mb-5'>
+                <img src={p.img}alt={p.type}  className='w-full h-[300px] rounded-[16px] '/>
+                <div className='flex items-center justify-between w-[80%] absolute top-[10%] left-10'>
                       
-                      <p>{item.product}</p>
-                      {item.heart}
-                    </div>
+                <p>{p.product}</p>
+                  {p.heart}
+                </div>
                     
-                    <p className=' text-[16px] font-medium mt-2'>{item.type}</p>
-                    <div className='flex items-center justify-between '>
-                      <p className='flex items-center gap-2'><IoLocation size={15} /> {item.location}, <span className=''>Nigeria</span></p>
-                      <div className='flex items-center gap-4'>
-                        <AiFillEdit size={20} className='cursor-pointer'/>
-                        <RiDeleteBin6Fill size={18} className=' cursor-pointer text-[#b12a2a]'/>
+                <p className=' text-[16px] font-medium mt-2'>{p.type}</p>
+                <div className='flex items-center justify-between '>
+                  <p className='flex items-center gap-2'><IoLocation size={15} /> {p.location}<span className=''>Nigeria</span></p>
+                  <div className='flex items-center gap-4'>
+                    <AiFillEdit size={20} className='cursor-pointer'/>
+                    <RiDeleteBin6Fill size={18} className=' cursor-pointer text-[#b12a2a]' onClick={()=> handleDelete(p.id)}/>
                         
-                      </div>
-                    </div>
-                    
                   </div>
-                </>
-              ))}
-             
-            </div>
-            {/* <div className='flex overflow-hidden items-center gap-8 my-6'>
-              {build.map((item)=>(
-                <>
-                  <div key={item.id} className='border-[0.2px] rounded-[20px] text-[14px] border-gray-100 w-[330px] relative p-4'>
-                    <img src={item.img}alt='background'  className='w-full h-[300px] rounded-[16px] '/>
-                    <div className='flex items-center justify-between w-[80%] absolute top-[10%] left-10'>
-                      
-                      <p>{item.product}</p>
-                      
-                    </div>
-                    
-                    <p className=' text-[16px] font-medium mt-2'>{item.type}</p>
-                    <div className='flex items-center justify-between '>
-                      <p className='flex items-center gap-2'><IoLocation size={15} /> {item.location}, <span className=''>Nigeria</span></p>
-                      <div className='flex items-center gap-4'>
-                        <AiFillEdit size={20} className='cursor-pointer'/>
-                        <RiDeleteBin6Fill size={18} className=' cursor-pointer text-[#b12a2a]'/>
-                        
-                      </div>
-                    </div>
-                    
+                  
+                     
+                                    
                   </div>
-                </>
-              ))}
-             
-            </div>
-            <div className='flex overflow-hidden items-center gap-8'>
-              {build.map((item)=>(
-                <>
-                  <div key={item.id} className='border-[0.2px] rounded-[20px] border-gray-100 w-[330px] relative p-4 text-[14px]'>
-                    <img src={item.img}alt='background'  className='w-full h-[300px] rounded-[16px] '/>
-                    <div className='flex items-center justify-between w-[80%] absolute top-[10%] left-10'>
-                      
-                      <p className='text-[blue]'>{item.product}</p>
-                      {item.heart}
-                    </div>
-                    
-                    <p className=' text-[16px] font-medium mt-2'>{item.type}</p>
-                    <div className='flex items-center justify-between '>
-                      <p className='flex items-center gap-2'><IoLocation size={15} /> {item.location}, <span className=''>Nigeria</span></p>
-                      <div className='flex items-center gap-4'>
-                        <AiFillEdit size={20} className='cursor-pointer'/>
-                        <RiDeleteBin6Fill size={18} className=' cursor-pointer text-[#b12a2a]'/>
-                        
-                      </div>
-                    </div>
-                    
-                  </div>
-                </>
-              ))}
-             
-            </div> */}
+                   
+                </div>
+                
+              </>
+            ))}
+            
+          </div>
+          
         </div>
       </div>
+      {(dialog.isLoading && <ConfirmDelete onConfirm={areUSureDelete} nameProduct={dialog.nameProduct} message={dialog.message}/>)  }
+
+
+      
+
+      
+                    
     </div>
   )
 }

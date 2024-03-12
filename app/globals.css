@@ -127,3 +127,16 @@ select {
   
 }
 
+.notification{
+  width: 400px;
+  padding: 20px;
+  border-left: 5px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  border-radius: 16px;
+  position: absolute;
+  right: 0;
+  top: 100px;
+}

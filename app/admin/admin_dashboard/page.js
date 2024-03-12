@@ -23,7 +23,7 @@ const AdminDashboard = () => {
           <Image src={BgImage} alt='background' width={1200} height={200} className='w-full h-[400px] rounded-[30px] lg:mt-[20px] '/>
           <div className='w-full mt-10 overflow-hidden'>
             <h2 className=' text-[25px] font-bold mb-5'>Buildings Available</h2>
-            <div className='flex items-center gap-6'>
+            <div className='flex flex-wrap items-center gap-6'>
               {build.map((item)=>(
                 <>
                   <div key={item.id} className='border-[0.5px] rounded-[30px] w-[350px] p-4 relative'>

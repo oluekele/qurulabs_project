@@ -20,7 +20,7 @@ const AdminLeftNavbar = () => {
       id: 1,
       label: 'Dashboard',
       icon: <MdDashboard size={20}/>,
-      href: '/admin/admin_dashboard',
+      href: '/' || '/admin/admin_dashboard',
     },
     {
       id: 2,
